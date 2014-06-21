@@ -1,3 +1,4 @@
+with Token; use Token;
 
 package body Lexer is
    Filename          : String := "start.asm";
@@ -30,11 +31,11 @@ package body Lexer is
       Get (InputFile, Char);
    end Discard;
 
-   procedure FetchToken is
+   function FetchToken return TokenRecord is
+      Token1 : TokenRecord;
    begin
-      Put_Line("test");
 
-      Initialise;
+--      Initialise;
 
       while not End_Of_File (InputFile) loop
          Token             := To_Unbounded_String ("");
@@ -43,7 +44,7 @@ package body Lexer is
          LookAhead;
 
          if EOL then
-            Put_Line ("<EOL>");
+--            Put_Line ("<EOL>");
             Ada.text_IO.Skip_Line (InputFile);
          else
             case Char is
@@ -52,13 +53,13 @@ package body Lexer is
                     ' ' =>
                   Discard;
                when '[' =>
-                  Put_Line ("<LEFTBRACKET>");
+--                  Put_Line ("<LEFTBRACKET>");
                   Discard;
                when ']' =>
-                  Put_Line ("<RIGHTBRACKET>");
+--                  Put_Line ("<RIGHTBRACKET>");
                   Discard;
                when ',' =>
-                  Put_Line ("<COMMA>");
+--                  Put_Line ("<COMMA>");
                   Discard;
 
                when ';' =>
@@ -89,11 +90,17 @@ package body Lexer is
                         when ':' =>
    -- LABEL
                            ReadCharIntoToken;
-                           Put_Line("<LABEL> - " & To_String (Token));
-                           exit;
+--                           Put_Line("<LABEL> - " & To_String (Token));
+                           Token1.TokenString := Token;
+                           Token1.TypeOfToken := StringLabel;
+                           return Token1;
+--                           exit;
                         when others =>
-                           Put_Line("<TOKEN> - " & To_String (Token));
-                           exit;
+--                           Put_Line("<TOKEN> - " & To_String (Token));
+                           Token1.TokenString := Token;
+                           Token1.TypeOfToken := StringToken;
+                           return Token1;
+--                           exit;
                      end case;
                   end loop;
 
@@ -115,7 +122,7 @@ package body Lexer is
                            exit;
                      end case;
                   end loop;
-                  Put_Line("<LOCALLABEL> - " & To_String (Token));
+--                  Put_Line("<LOCALLABEL> - " & To_String (Token));
                when '0' .. '9' =>
                   ReadCharIntoToken;
                   loop
@@ -131,13 +138,16 @@ package body Lexer is
                            exit;
                      end case;
                   end loop;
-                  Put_Line("<NUMBER> - " & To_String (Token));
+--                  Put_Line("<NUMBER> - " & To_String (Token));
 
                when others =>
-                  Put_Line ("other: '" & Char & "'");
+--                  Put_Line ("other: '" & Char & "'");
                   Discard;
             end case;
          end if;
       end loop;
+
+
+      return Token1;
    end FetchToken;
 end Lexer;
