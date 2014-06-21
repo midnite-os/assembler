@@ -64,7 +64,6 @@ package body Lexer is
 
                when ';' =>
                   Discard;
-                  ReadCharIntoToken;
                   loop
                      LookAhead;
                      if EOL then

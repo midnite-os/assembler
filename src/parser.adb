@@ -4,11 +4,18 @@ with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Lexer;
 with Token; use Token;
 
+with Instruction;
+
 package body Parser is
    procedure Parse is
       Token1 : Token.TokenRecord;
 
       Token2 : Token.TokenRecord;
+
+      NumberOfOperands : Integer;
+      OperandsToFetch  : Integer;
+
+      OperandToken : Token.TokenRecord;
    begin
 
       Lexer.Initialise;
@@ -24,7 +31,19 @@ package body Parser is
             end if;
 
             if Token2.TypeOfToken = StringInstruction then
-               Put_Line ("<INSTRUCTION>   - " & To_String(Token2.TokenString));
+               NumberOfOperands := Instruction.GetNumberOfOperands(Token2);
+               OperandsToFetch  := NumberOfOperands;
+
+               Put_Line ("<INSTRUCTION>   - " & To_String(Token2.TokenString) & " - " & Integer'Image(NumberOfOperands));
+
+if OperandsToFetch > 0 then
+--               while OperandsToFetch > 0 loop
+                  OperandToken := Lexer.FetchToken;
+--               end loop;
+               Put_Line ("<OPERAND 1>   - " & To_String(OperandToken.TokenString));
+end if;
+
+
             end if;
 
             if Token2.TypeOfToken = StringRegister then
