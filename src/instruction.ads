@@ -1,2 +1,2 @@
 package Instruction is
-end package;
+end Instruction;
