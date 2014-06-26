@@ -1,5 +1,7 @@
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Strings.Fixed;
 
 with Lexer;
 with Token; use Token;
@@ -36,12 +38,17 @@ package body Parser is
 
                Put_Line ("<INSTRUCTION>   - " & To_String(Token2.TokenString) & " - " & Integer'Image(NumberOfOperands));
 
-if OperandsToFetch > 0 then
+               if OperandsToFetch > 0 then
 --               while OperandsToFetch > 0 loop
                   OperandToken := Lexer.FetchToken;
+                  Put_Line ("<OPERAND 1>   - " & To_String(OperandToken.TokenString));
+
+                  if OperandsToFetch = 2 then
+                     OperandToken := Lexer.FetchToken;
+                     Put_Line ("<OPERAND 2>   - " & To_String(OperandToken.TokenString));
+                  end if;
 --               end loop;
-               Put_Line ("<OPERAND 1>   - " & To_String(OperandToken.TokenString));
-end if;
+               end if;
 
 
             end if;
@@ -94,13 +101,13 @@ end if;
    function TokenIsInstruction (TokenToCheck : TokenRecord) return Boolean is
    begin
 
-      if To_String (TokenToCheck.TokenString) = "MOV" then
-         return True;
-      end if;
-
-      if To_String (TokenToCheck.TokenString) = "JMP" then
-         return True;
-      end if;      
+      for Index in 0 .. (Instruction.InstructionList'Length - 1) loop
+         if Ada.Strings.Fixed.Translate(To_String(Instruction.InstructionList(Index).InstructionString),
+     Ada.Strings.Maps.Constants.Upper_Case_Map) = Ada.Strings.Fixed.Translate(To_String(TokenToCheck.TokenString),
+     Ada.Strings.Maps.Constants.Upper_Case_Map) then
+            return True;
+         end if;
+      end loop;
 
       return False;
    end TokenIsInstruction;

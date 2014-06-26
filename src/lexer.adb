@@ -1,7 +1,7 @@
 with Token; use Token;
 
 package body Lexer is
-   Filename          : String := "start.asm";
+   Filename          : String := "test.asm";
    InputFile         : Ada.Text_IO.File_Type;
    Mode              : File_Mode := Ada.Text_IO.In_File;
    Char              : Character;
@@ -134,7 +134,9 @@ package body Lexer is
                            ReadCharIntoToken;
 
                         when others =>
-                           exit;
+                           Token1.TokenString := Token;
+                           Token1.TypeOfToken := StringToken;
+                           return Token1;
                      end case;
                   end loop;
 --                  Put_Line("<NUMBER> - " & To_String (Token));
