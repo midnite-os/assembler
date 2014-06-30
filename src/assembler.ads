@@ -1,3 +1,3 @@
 package Assembler is
-   procedure Assemble;
+	procedure Assembler;
 end Assembler;
