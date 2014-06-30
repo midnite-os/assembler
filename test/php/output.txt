@@ -1,0 +1,870 @@
+OpcodeMap Object
+(
+    [opcodeMap] => Array
+        (
+            [ADD] => Array
+                (
+                    [Eb,Gb] => 00
+                    [Ev,Gv] => 01
+                    [Gb,Eb] => 02
+                    [Gv,Ev] => 03
+                    [AL,Ib] => 04
+                    [rAX,Iz] => 05
+                )
+
+            [PUSH] => Array
+                (
+                    [ES] => 06
+                    [CS] => 0e
+                    [SS] => 16
+                    [DS] => 1e
+                    [rAX/r8] => 50
+                    [rCX/r9] => 51
+                    [rDX/r10] => 52
+                    [rBX/r11] => 53
+                    [rSP/r12] => 54
+                    [rBP/r13] => 55
+                    [rSI/r14] => 56
+                    [rDI/r15] => 57
+                    [Iz] => 68
+                    [Ib] => 6a
+                )
+
+            [POP] => Array
+                (
+                    [ES] => 07
+                    [SS] => 17
+                    [DS] => 1f
+                    [rAX/r8] => 58
+                    [rCX/r9] => 59
+                    [rDX/r10] => 5a
+                    [rBX/r11] => 5b
+                    [rSP/r12] => 5c
+                    [rBP/r13] => 5d
+                    [rSI/r14] => 5e
+                    [rDI/r15] => 5f
+                )
+
+            [OR] => Array
+                (
+                    [Eb,Gb] => 08
+                    [Ev,Gv] => 09
+                    [Gb,Eb] => 0a
+                    [Gv,Ev] => 0b
+                    [AL,Ib] => 0c
+                    [rAX,Iz] => 0d
+                )
+
+            [ADC] => Array
+                (
+                    [Eb,Gb] => 10
+                    [Ev,Gv] => 11
+                    [Gb,Eb] => 12
+                    [Gv,Ev] => 13
+                    [AL,Ib] => 14
+                    [rAX,Iz] => 15
+                )
+
+            [SBB] => Array
+                (
+                    [Eb,Gb] => 18
+                    [Ev,Gv] => 19
+                    [Gb,Eb] => 1a
+                    [Gv,Ev] => 1b
+                    [AL,Ib] => 1c
+                    [rAX,Iz] => 1d
+                )
+
+            [AND] => Array
+                (
+                    [Eb,Gb] => 20
+                    [Ev,Gv] => 21
+                    [Gb,Eb] => 22
+                    [Gv,Ev] => 23
+                    [AL,Ib] => 24
+                    [rAx,Iz] => 25
+                )
+
+            [SEG=ES] => Array
+                (
+                    [NO_OPERANDS] => 26
+                )
+
+            [DAA] => Array
+                (
+                    [NO_OPERANDS] => 27
+                )
+
+            [SUB] => Array
+                (
+                    [Eb,Gb] => 28
+                    [Ev,Gv] => 29
+                    [Gb,Eb] => 2a
+                    [Gv,Ev] => 2b
+                    [AL,Ib] => 2c
+                    [rAX,Iz] => 2d
+                )
+
+            [SEG=CS] => Array
+                (
+                    [NO_OPERANDS] => 2e
+                )
+
+            [DAS] => Array
+                (
+                    [NO_OPERANDS] => 2f
+                )
+
+            [XOR] => Array
+                (
+                    [Eb,Gb] => 30
+                    [Ev,Gv] => 31
+                    [Gb,Eb] => 32
+                    [Gv,Ev] => 33
+                    [AL,Ib] => 34
+                    [rAX,Iz] => 35
+                )
+
+            [SEG=SS] => Array
+                (
+                    [NO_OPERANDS] => 36
+                )
+
+            [AAA] => Array
+                (
+                    [NO_OPERANDS] => 37
+                )
+
+            [CMP] => Array
+                (
+                    [Eb,Gb] => 38
+                    [Ev,Gv] => 39
+                    [Gb,Eb] => 3a
+                    [Gv,Ev] => 3b
+                    [AL,Ib] => 3c
+                    [rAX,Iz] => 3d
+                )
+
+            [SEG=DS] => Array
+                (
+                    [NO_OPERANDS] => 3e
+                )
+
+            [AAS] => Array
+                (
+                    [NO_OPERANDS] => 3f
+                )
+
+            [INC] => Array
+                (
+                    [eAX] => 40
+                    [eCX] => 41
+                    [eDX] => 42
+                    [eBX] => 43
+                    [eSP] => 44
+                    [eBP] => 45
+                    [eSI] => 46
+                    [eDI] => 47
+                )
+
+            [DEC] => Array
+                (
+                    [eAX] => 48
+                    [eCX] => 49
+                    [eDX] => 4a
+                    [eBX] => 4b
+                    [eSP] => 4c
+                    [eBP] => 4d
+                    [eSI] => 4e
+                    [eDI] => 4f
+                )
+
+            [PUSHA] => Array
+                (
+                    [NO_OPERANDS] => 60
+                )
+
+            [PUSHAD] => Array
+                (
+                    [NO_OPERANDS] => 60
+                )
+
+            [POPA] => Array
+                (
+                    [NO_OPERANDS] => 61
+                )
+
+            [POPAD] => Array
+                (
+                    [NO_OPERANDS] => 61
+                )
+
+            [BOUND] => Array
+                (
+                    [Gv,Ma] => 62
+                )
+
+            [ARPL] => Array
+                (
+                    [Ew,Gw] => 63
+                )
+
+            [SEG=FS] => Array
+                (
+                    [NO_OPERANDS] => 64
+                )
+
+            [SEG=GS] => Array
+                (
+                    [NO_OPERANDS] => 65
+                )
+
+            [Operand-Size] => Array
+                (
+                    [NO_OPERANDS] => 66
+                )
+
+            [Address-Size] => Array
+                (
+                    [NO_OPERANDS] => 67
+                )
+
+            [IMUL] => Array
+                (
+                    [Gv,Ev] => 6b
+                )
+
+            [INS] => Array
+                (
+                    [Yb,DX] => 6c
+                    [Yz,DX] => 6d
+                )
+
+            [INSB] => Array
+                (
+                    [Yb,DX] => 6c
+                )
+
+            [INSW] => Array
+                (
+                    [Yz,DX] => 6d
+                )
+
+            [INSD] => Array
+                (
+                    [Yz,DX] => 6d
+                )
+
+            [OUTS] => Array
+                (
+                    [DX,Xb] => 6e
+                    [DX,Xz] => 6f
+                )
+
+            [OUTSB] => Array
+                (
+                    [DX,Xb] => 6e
+                )
+
+            [OUTSW] => Array
+                (
+                    [DX,Xz] => 6f
+                )
+
+            [OUTSD] => Array
+                (
+                    [DX,Xz] => 6f
+                )
+
+            [JO] => Array
+                (
+                    [Jb] => 70
+                )
+
+            [JNO] => Array
+                (
+                    [Jb] => 71
+                )
+
+            [JB] => Array
+                (
+                    [Jb] => 72
+                )
+
+            [JNAE] => Array
+                (
+                    [Jb] => 72
+                )
+
+            [JC] => Array
+                (
+                    [Jb] => 72
+                )
+
+            [JNB] => Array
+                (
+                    [Jb] => 73
+                )
+
+            [JAE] => Array
+                (
+                    [Jb] => 73
+                )
+
+            [JNC] => Array
+                (
+                    [Jb] => 73
+                )
+
+            [JZ] => Array
+                (
+                    [Jb] => 74
+                )
+
+            [JE] => Array
+                (
+                    [Jb] => 74
+                )
+
+            [JNZ] => Array
+                (
+                    [Jb] => 75
+                )
+
+            [JNE] => Array
+                (
+                    [Jb] => 75
+                )
+
+            [JBE] => Array
+                (
+                    [Jb] => 76
+                )
+
+            [JNA] => Array
+                (
+                    [Jb] => 76
+                )
+
+            [JNBE] => Array
+                (
+                    [Jb] => 77
+                )
+
+            [JA] => Array
+                (
+                    [Jb] => 77
+                )
+
+            [JS] => Array
+                (
+                    [Jb] => 78
+                )
+
+            [JNS] => Array
+                (
+                    [Jb] => 79
+                )
+
+            [JP] => Array
+                (
+                    [Jb] => 7a
+                )
+
+            [JPE] => Array
+                (
+                    [Jb] => 7a
+                )
+
+            [JNP] => Array
+                (
+                    [Jb] => 7b
+                )
+
+            [JPO] => Array
+                (
+                    [Jb] => 7b
+                )
+
+            [JL] => Array
+                (
+                    [Jb] => 7c
+                )
+
+            [JNGE] => Array
+                (
+                    [Jb] => 7c
+                )
+
+            [JNL] => Array
+                (
+                    [Jb] => 7d
+                )
+
+            [JGE] => Array
+                (
+                    [Jb] => 7d
+                )
+
+            [JLE] => Array
+                (
+                    [Jb] => 7e
+                )
+
+            [JNG] => Array
+                (
+                    [Jb] => 7e
+                )
+
+            [JNLE] => Array
+                (
+                    [Jb] => 7f
+                )
+
+            [JG] => Array
+                (
+                    [Jb] => 7f
+                )
+
+            [TEST] => Array
+                (
+                    [Eb,Gb] => 84
+                    [Ev,Gv] => 85
+                    [AL,Ib] => a8
+                    [rAX,Iz] => a9
+                )
+
+            [XCHG] => Array
+                (
+                    [Eb,Gb] => 86
+                    [Ev,Gv] => 87
+                    [rCX/r9,rAX] => 91
+                    [rDX/r10,rAX] => 92
+                    [rBX/r11,rAX] => 93
+                    [rSP/r12,rAX] => 94
+                    [rBP/r13,rAX] => 95
+                    [rSI/r14,rAX] => 96
+                    [rDI/r15,rAX] => 97
+                )
+
+            [MOV] => Array
+                (
+                    [Eb,Gb] => 88
+                    [Ev,Gv] => 89
+                    [Gb,Eb] => 8a
+                    [Gv,Ev] => 8b
+                    [Ev,Sw] => 8c
+                    [Sw,Ew] => 8e
+                    [AL,Ob] => a0
+                    [rAX,Ov] => a1
+                    [Ob,AL] => a2
+                    [Ov,rAX] => a3
+                    [AL/R8L,Ib] => b0
+                    [CL/R9L,Ib] => b1
+                    [DL/R10L,Ib] => b2
+                    [BL/R11L,Ib] => b3
+                    [AH/R12L,Ib] => b4
+                    [CH/R13L,Ib] => b5
+                    [DH/R14L,Ib] => b6
+                    [BH/R15L,Ib] => b7
+                    [rAX/r8,Iv] => b8
+                    [rCX/r9,Iv] => b9
+                    [rDX/r10,Iv] => ba
+                    [rBX/r11,Iv] => bb
+                    [rSP/r12,Iv] => bc
+                    [rBP/r13,Iv] => bd
+                    [rSI/r14,Iv] => be
+                    [rDI/r15,Iv] => bf
+                )
+
+            [LEA] => Array
+                (
+                    [Gv,M] => 8d
+                )
+
+            [NOP] => Array
+                (
+                    [|] => 90
+                )
+
+            [CBW] => Array
+                (
+                    [NO_OPERANDS] => 98
+                )
+
+            [CWDE] => Array
+                (
+                    [NO_OPERANDS] => 98
+                )
+
+            [CDQE] => Array
+                (
+                    [NO_OPERANDS] => 98
+                )
+
+            [CWD] => Array
+                (
+                    [NO_OPERANDS] => 99
+                )
+
+            [CDQ] => Array
+                (
+                    [NO_OPERANDS] => 99
+                )
+
+            [CQO] => Array
+                (
+                    [NO_OPERANDS] => 99
+                )
+
+            [CALLF] => Array
+                (
+                    [Ap] => 9a
+                )
+
+            [FWAIT] => Array
+                (
+                    [NO_OPERANDS] => 9b
+                )
+
+            [WAIT] => Array
+                (
+                    [NO_OPERANDS] => 9b
+                )
+
+            [PUSHFQ] => Array
+                (
+                    [Fv] => 9c
+                )
+
+            [PUSHFD] => Array
+                (
+                    [Fv] => 9c
+                )
+
+            [POPFQ] => Array
+                (
+                    [Fv] => 9d
+                )
+
+            [POPFD] => Array
+                (
+                    [Fv] => 9d
+                )
+
+            [SAHF] => Array
+                (
+                    [NO_OPERANDS] => 9e
+                )
+
+            [LAHF] => Array
+                (
+                    [NO_OPERANDS] => 9f
+                )
+
+            [MOVSB] => Array
+                (
+                    [Yb,Xb] => a4
+                )
+
+            [MOVSQ] => Array
+                (
+                    [Yv,Xv] => a5
+                )
+
+            [MOVSD] => Array
+                (
+                    [Yv,Xv] => a5
+                )
+
+            [MOVSW] => Array
+                (
+                    [Yv,Xv] => a5
+                )
+
+            [CMPSB] => Array
+                (
+                    [Xb,Yb] => a6
+                )
+
+            [CMPSD] => Array
+                (
+                    [Xv,Yv] => a7
+                )
+
+            [CMPSW] => Array
+                (
+                    [Xv,Yv] => a7
+                )
+
+            [STOSB] => Array
+                (
+                    [Yb,AL] => aa
+                )
+
+            [STOSQ] => Array
+                (
+                    [Yv,rAX] => ab
+                )
+
+            [STOSD] => Array
+                (
+                    [Yv,rAX] => ab
+                )
+
+            [STOSW] => Array
+                (
+                    [Yv,rAX] => ab
+                )
+
+            [LODSB] => Array
+                (
+                    [AL,Xb] => ac
+                )
+
+            [LODSQ] => Array
+                (
+                    [rAX,Xv] => ad
+                )
+
+            [LODSD] => Array
+                (
+                    [rAX,Xv] => ad
+                )
+
+            [LODSW] => Array
+                (
+                    [rAX,Xv] => ad
+                )
+
+            [SCASB] => Array
+                (
+                    [AL,Yb] => ae
+                )
+
+            [SCASQ] => Array
+                (
+                    [rAX,Yv] => af
+                )
+
+            [SCASD] => Array
+                (
+                    [rAX,Yv] => af
+                )
+
+            [SCASW] => Array
+                (
+                    [rAX,Yv] => af
+                )
+
+            [RETN] => Array
+                (
+                    [Iw] => c2
+                    [NO_OPERANDS] => c3
+                )
+
+            [LES] => Array
+                (
+                    [Gz,Mp] => c4
+                )
+
+            [LDS] => Array
+                (
+                    [Gz,Mp] => c5
+                )
+
+            [ENTER] => Array
+                (
+                    [Iw,Ib] => c8
+                )
+
+            [LEAVE] => Array
+                (
+                    [NO_OPERANDS] => c9
+                )
+
+            [RETF] => Array
+                (
+                    [Iw] => ca
+                    [NO_OPERANDS] => cb
+                )
+
+            [INT3] => Array
+                (
+                    [NO_OPERANDS] => cc
+                )
+
+            [INT] => Array
+                (
+                    [Ib] => cd
+                )
+
+            [INTO] => Array
+                (
+                    [NO_OPERANDS] => ce
+                )
+
+            [IRETQ] => Array
+                (
+                    [NO_OPERANDS] => cf
+                )
+
+            [IRETD] => Array
+                (
+                    [NO_OPERANDS] => cf
+                )
+
+            [AAM] => Array
+                (
+                    [Ib] => d4
+                )
+
+            [AAD] => Array
+                (
+                    [Ib] => d5
+                )
+
+            [XLAT] => Array
+                (
+                    [NO_OPERANDS] => d7
+                )
+
+            [XLATB] => Array
+                (
+                    [NO_OPERANDS] => d7
+                )
+
+            [ESC] => Array
+                (
+                    [NO_OPERANDS] => df
+                )
+
+            [LOOPNE] => Array
+                (
+                    [Jb] => e0
+                )
+
+            [LOOPNZ] => Array
+                (
+                    [Jb] => e0
+                )
+
+            [LOOPE] => Array
+                (
+                    [Jb] => e1
+                )
+
+            [LOOPZ] => Array
+                (
+                    [Jb] => e1
+                )
+
+            [LOOP] => Array
+                (
+                    [Jb] => e2
+                )
+
+            [JrCXZ] => Array
+                (
+                    [Jb] => e3
+                )
+
+            [IN] => Array
+                (
+                    [AL,Ib] => e4
+                    [eAX,Ib] => e5
+                    [AL,DX] => ec
+                    [eAX,DX] => ed
+                )
+
+            [OUT] => Array
+                (
+                    [Ib,AL] => e6
+                    [Ib,eAX] => e7
+                    [DX,AL] => ee
+                    [DX,eAX] => ef
+                )
+
+            [CALL] => Array
+                (
+                    [Jz] => e8
+                )
+
+            [JMP-near] => Array
+                (
+                    [Jz] => e9
+                )
+
+            [JMP-far] => Array
+                (
+                    [Ap] => ea
+                )
+
+            [JMP-short] => Array
+                (
+                    [Jb] => eb
+                )
+
+            [LOCK] => Array
+                (
+                    [NO_OPERANDS] => f0
+                )
+
+            [REPNE] => Array
+                (
+                    [NO_OPERANDS] => f2
+                )
+
+            [REP] => Array
+                (
+                    [NO_OPERANDS] => f3
+                )
+
+            [REPE] => Array
+                (
+                    [NO_OPERANDS] => f3
+                )
+
+            [HLT] => Array
+                (
+                    [NO_OPERANDS] => f4
+                )
+
+            [CMC] => Array
+                (
+                    [NO_OPERANDS] => f5
+                )
+
+            [CLC] => Array
+                (
+                    [NO_OPERANDS] => f8
+                )
+
+            [STC] => Array
+                (
+                    [NO_OPERANDS] => f9
+                )
+
+            [CLI] => Array
+                (
+                    [NO_OPERANDS] => fa
+                )
+
+            [STI] => Array
+                (
+                    [NO_OPERANDS] => fb
+                )
+
+            [CLD] => Array
+                (
+                    [NO_OPERANDS] => fc
+                )
+
+            [STD] => Array
+                (
+                    [NO_OPERANDS] => fd
+                )
+
+        )
+
+)
